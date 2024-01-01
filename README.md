@@ -22,6 +22,7 @@ https://tomaszbrylski.github.io/ToDo-List/
 
 
 ### Languages / Technologies
+- React
 - HTML
 - Java Script
 - CSS
