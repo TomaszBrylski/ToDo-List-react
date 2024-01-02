@@ -2,6 +2,8 @@
 
 ## It is a simple application that was created for daily use to help organize and prioritize tasks to be done.
 
+![Conventer](public/todolist-react.png)
+
 You can also test it yourself, it is very easy to use:
 - in the window "What is there to do?" (marked with a box) we type the task we want to add to our list,
 - then press the "Add task" button (green button),
