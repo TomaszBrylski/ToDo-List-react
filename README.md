@@ -2,10 +2,6 @@
 
 ## It is a simple application that was created for daily use to help organize and prioritize tasks to be done.
 
-You can also see a short video showing how the app works on GIF
-
-![Conventer](images/todolist.gif)
-
 You can also test it yourself, it is very easy to use:
 - in the window "What is there to do?" (marked with a box) we type the task we want to add to our list,
 - then press the "Add task" button (green button),
@@ -18,7 +14,7 @@ You can also test it yourself, it is very easy to use:
 
 Link below:
 
-https://tomaszbrylski.github.io/ToDo-List/
+https://tomaszbrylski.github.io/ToDo-List-react/
 
 
 ### Languages / Technologies
