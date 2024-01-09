@@ -10,7 +10,7 @@ const tasks = [
   { id: 2, content: "make an annual balance sheet of profits", done: true },
 ];
 
-const hideDoneTasks = false;
+const hideDone = false;
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
 
       <Section
         title="Tasks List"
-        body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+        body={<Tasks tasks={tasks} hideDone={hideDone} />}
         extraHeaderContent={
-          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
+          <Buttons tasks={tasks} hideDone={hideDone} />
         }
       />
     </Container>
