@@ -42,10 +42,21 @@ function App() {
     );
   };
 
+  const addNewTask = (content) => {
+    setTasks((tasks) => [
+      ...tasks,
+      {
+        content,
+        done: false,
+        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+      },
+    ]);
+  };
+
   return (
     <Container>
       <Header title="Task List" />
-      <Section title="Add a new task" body={<Form />} />
+      <Section title="Add a new task" body={<Form addNewTask={addNewTask} />} />
 
       <Section
         title="Tasks List"
