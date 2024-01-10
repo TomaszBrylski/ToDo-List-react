@@ -21,7 +21,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
             task.done ? " tasks__content--done" : ""
           }`}
         >
-          {task.content}
+          {task.id} - {task.content}
         </span>
 
         <button
