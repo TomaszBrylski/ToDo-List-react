@@ -8,9 +8,16 @@ import Container from "./Container";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
+  const tasksFromStorage = localStorage.getItem("tasks")
 
   const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
+    tasksFromStorage
+      ? JSON.parse(tasksFromStorage)
+      :
+      [
+        { content: "switch to React", done: false },
+        { content: "make an annual balance sheet of profits", done: true },
+      ]
   );
 
   const setLocal = () => {
