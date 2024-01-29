@@ -10,9 +10,9 @@ export const Item = styled.li`
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 10px;
-  border-bottom: 1px solid #ddd;
   align-items: center;
   padding: 10px;
+  border-bottom: 1px solid ${({ theme }) => theme.color.alto};
 
   ${({hidden}) => hidden && css`
     display: none;
@@ -26,28 +26,26 @@ export const Content = styled.span`
 `;
 
 export const Button = styled.button`
-  color: white;
   border: none;
+  color: ${({ theme }) => theme.color.white};
   width: 30px;
   height: 30px;
   padding: 0px;
-  transition: background 0.3s;
+  transition: filter 0.3s;
 
   ${({toggleDone}) => toggleDone && css`
-    background: green;
-    transition: 0.8s;
-
-    &:hover {
-        background: hsl(120, 100%, 30%);
-    }
+    background: ${({ theme }) => theme.color.forestGreen};
   `}
 
   ${({remove}) => remove && css`
-    background: hsl(0, 100%, 40%);
-    transition: 0.8s;
-
-    &:hover {
-        background: hsl(0, 100%, 50%);
-    }
+    background: crimson;
   `}
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(120%);
+  }
 `;
