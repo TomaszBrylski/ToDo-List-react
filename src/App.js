@@ -5,70 +5,30 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
+import { useTasks } from "./useTasks";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const tasksFromStorage = localStorage.getItem("tasks")
-
-  const [tasks, setTasks] = useState(
-    tasksFromStorage
-      ? JSON.parse(tasksFromStorage)
-      :
-      [
-        { content: "switch to React", done: false },
-        { content: "make an annual balance sheet of profits", done: true },
-      ]
-  );
-
-  const setLocal = () => {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-  }
-  setLocal()
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
 
-  const removeTasks = (id) => {
-    setTasks((tasks) => tasks.filter((task) => task.id !== id));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks((tasks) =>
-      tasks.map((task) => {
-        if (task.id === id) {
-          return { ...task, done: !task.done };
-        }
-
-        return task;
-      })
-    );
-  };
-
-  const setAllDone = () => {
-    setTasks((tasks) =>
-      tasks.map((task) => ({
-        ...task,
-        done: true,
-      }))
-    );
-  };
-
-  const addNewTask = (content) => {
-    setTasks((tasks) => [
-      ...tasks,
-      {
-        content,
-        done: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-      },
-    ]);
-  };
+  const { 
+    tasks, 
+    removeTask, 
+    toggleTaskDone, 
+    setAllDone, 
+    addNewTask, 
+  } = useTasks();
 
   return (
     <Container>
       <Header title="Task List" />
-      <Section title="Add a new task" body={<Form addNewTask={addNewTask} />} />
+      <Section 
+        title="Add a new task" 
+        body={<Form addNewTask={addNewTask} />} 
+      />
 
       <Section
         title="Tasks List"
@@ -76,7 +36,7 @@ function App() {
           <Tasks
             tasks={tasks}
             hideDone={hideDone}
-            removeTask={removeTasks}
+            removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
           />
         }
