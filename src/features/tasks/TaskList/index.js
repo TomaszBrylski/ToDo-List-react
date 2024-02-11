@@ -1,6 +1,6 @@
 import { List, Item, Content, Button } from "./styled";
 
-const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
+const TaskList = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
   <List>
     {tasks.map((task) => (
       <Item 
@@ -8,16 +8,16 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
         hidden={task.done && hideDone}
       >
         <Button 
-          toggleDone 
+          $toggleDone 
           onClick={() => toggleTaskDone(task.id)}
         >
           {task.done ? "✓" : ""}
         </Button>
-        <Content done={task.done}>
+        <Content $done={task.done}>
           {task.content}
         </Content>
         <Button 
-        remove 
+        $remove 
         onClick={() => removeTask(task.id)}
         >
           🗑
@@ -27,4 +27,4 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
   </List>
 );
 
-export default Tasks;
+export default TaskList;
