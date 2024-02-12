@@ -25,9 +25,14 @@ https://tomaszbrylski.github.io/ToDo-List-react/
 - React
 - HTML
 - Java Script
-- CSS
+- CSS Grid
+- CSS Flex
 - BEM
-- GRID
+- Normalize.css
+- Styled Components
+- Media Queries
+- Redux
+- Redux Toolkit
 - ScreenToGit
 - MidJourney 
 
