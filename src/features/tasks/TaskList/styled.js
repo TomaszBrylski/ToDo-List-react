@@ -33,11 +33,11 @@ export const Button = styled.button`
   padding: 0px;
   transition: filter 0.3s;
 
-  ${({$toggleDone}) => $toggleDone && css`
+  ${({toggleDone}) => toggleDone && css`
     background: ${({ theme }) => theme.color.forestGreen};
   `}
 
-  ${({$remove}) => $remove && css`
+  ${({remove}) => remove && css`
     background: crimson;
   `}
 
