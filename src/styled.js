@@ -6,6 +6,6 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     activClassName,
 }))`
   &.${activClassName} {
-    color: red;
+    color: teal;
   }
 `;
