@@ -18,7 +18,7 @@ Link below:
 
 ## Demo
 
-https://tomaszbrylski.github.io/ToDo-List-react/
+https://tomaszbrylski.github.io/ToDo-List-react/#/tasks
 
 
 ### Languages / Technologies
